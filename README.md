@@ -26,3 +26,8 @@ about connect the SQLserver
 
 
 "App.config" in Project,modify the content:
+
+
+
+the csdn blog:
+https://blog.csdn.net/ot512csdn/article/details/80352073
