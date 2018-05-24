@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="basisagentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="host_command">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hosttext" Type="nvarchar" MaxLength="50" />
+          <Property Name="hostname" Type="nvarchar" MaxLength="50" />
+          <Property Name="strip" Type="nvarchar" MaxLength="50" />
+          <Property Name="strusername" Type="nvarchar" MaxLength="50" />
+          <Property Name="strpassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="strcommandpromat" Type="nvarchar" MaxLength="50" />
+          <Property Name="strcommand" Type="nvarchar" MaxLength="50" />
+          <Property Name="adapter" Type="nvarchar" MaxLength="50" />
+          <Property Name="os" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="log_aix_df">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="savetime" Type="datetime" />
+          <Property Name="hostname" Type="nvarchar" MaxLength="50" />
+          <Property Name="filesystem" Type="nvarchar" MaxLength="50" />
+          <Property Name="GBblocks" Type="nvarchar" MaxLength="50" />
+          <Property Name="diskfree" Type="nvarchar" MaxLength="50" />
+          <Property Name="diskused" Type="nvarchar" MaxLength="50" />
+          <Property Name="iused" Type="nvarchar" MaxLength="50" />
+          <Property Name="iusedpercent" Type="nvarchar" MaxLength="50" />
+          <Property Name="mounted" Type="nvarchar" MaxLength="50" />
+          <Property Name="alarm_checked" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="rule_aix_df">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hostname" Type="nvarchar" MaxLength="50" />
+          <Property Name="strcommand" Type="nvarchar" MaxLength="50" />
+          <Property Name="strhead" Type="nvarchar" MaxLength="200" />
+          <Property Name="strtail" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="basisagentModelStoreContainer">
+          <EntitySet Name="host_command" EntityType="Self.host_command" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_aix_df" EntityType="Self.log_aix_df" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rule_aix_df" EntityType="Self.rule_aix_df" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="basisagentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="basisagentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="host_command" EntityType="basisagentModel.host_command" />
+          <EntitySet Name="log_aix_df" EntityType="basisagentModel.log_aix_df" />
+          <EntitySet Name="rule_aix_df" EntityType="basisagentModel.rule_aix_df" />
+        </EntityContainer>
+        <EntityType Name="host_command">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hosttext" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strcommandpromat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strcommand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adapter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="os" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="log_aix_df">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="savetime" Type="DateTime" Precision="3" />
+          <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filesystem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GBblocks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diskfree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diskused" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iused" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iusedpercent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mounted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="alarm_checked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="rule_aix_df">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strcommand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strhead" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="strtail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="basisagentModelStoreContainer" CdmEntityContainer="basisagentEntities">
+          <EntitySetMapping Name="host_command">
+            <EntityTypeMapping TypeName="basisagentModel.host_command">
+              <MappingFragment StoreEntitySet="host_command">
+                <ScalarProperty Name="os" ColumnName="os" />
+                <ScalarProperty Name="adapter" ColumnName="adapter" />
+                <ScalarProperty Name="strcommand" ColumnName="strcommand" />
+                <ScalarProperty Name="strcommandpromat" ColumnName="strcommandpromat" />
+                <ScalarProperty Name="strpassword" ColumnName="strpassword" />
+                <ScalarProperty Name="strusername" ColumnName="strusername" />
+                <ScalarProperty Name="strip" ColumnName="strip" />
+                <ScalarProperty Name="hostname" ColumnName="hostname" />
+                <ScalarProperty Name="hosttext" ColumnName="hosttext" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_aix_df">
+            <EntityTypeMapping TypeName="basisagentModel.log_aix_df">
+              <MappingFragment StoreEntitySet="log_aix_df">
+                <ScalarProperty Name="alarm_checked" ColumnName="alarm_checked" />
+                <ScalarProperty Name="mounted" ColumnName="mounted" />
+                <ScalarProperty Name="iusedpercent" ColumnName="iusedpercent" />
+                <ScalarProperty Name="iused" ColumnName="iused" />
+                <ScalarProperty Name="diskused" ColumnName="diskused" />
+                <ScalarProperty Name="diskfree" ColumnName="diskfree" />
+                <ScalarProperty Name="GBblocks" ColumnName="GBblocks" />
+                <ScalarProperty Name="filesystem" ColumnName="filesystem" />
+                <ScalarProperty Name="hostname" ColumnName="hostname" />
+                <ScalarProperty Name="savetime" ColumnName="savetime" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rule_aix_df">
+            <EntityTypeMapping TypeName="basisagentModel.rule_aix_df">
+              <MappingFragment StoreEntitySet="rule_aix_df">
+                <ScalarProperty Name="strtail" ColumnName="strtail" />
+                <ScalarProperty Name="strhead" ColumnName="strhead" />
+                <ScalarProperty Name="strcommand" ColumnName="strcommand" />
+                <ScalarProperty Name="hostname" ColumnName="hostname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
